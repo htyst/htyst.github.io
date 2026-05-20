@@ -393,8 +393,7 @@
     window.addEventListener('resize', () => {
       handleResponsive();
     });
-    
-    console.log('� Sunset theme effects initialized!');
+
   }
 
   // 开始初始化
