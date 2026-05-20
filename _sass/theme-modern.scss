@@ -1,0 +1,423 @@
+/* ============================================
+   方案一：极简现代风 - 核心样式
+   ============================================ */
+
+/* 颜色定义 */
+$primary-color: #6366F1;      /* 靛蓝 */
+$secondary-color: #EC4899;    /* 粉红 */
+$accent-color: #8B5CF6;       /* 紫色 */
+$dark-bg: #0F172A;            /* 深蓝背景 */
+$card-bg: rgba(30, 41, 59, 0.8);  /* 卡片半透 */
+$text-primary: #F1F5F9;       /* 雪白文字 */
+$text-secondary: #CBD5E1;     /* 灰白文字 */
+
+/* ============================================
+   全局样式
+   ============================================ */
+
+body {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  color: $text-primary;
+  overflow-x: hidden;
+  
+  /* 背景动画 */
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(99, 102, 241, 0.05) 0%, 
+      rgba(236, 72, 153, 0.05) 50%, 
+      rgba(139, 92, 246, 0.05) 100%);
+    animation: gradientShift 8s ease infinite;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% { 
+    filter: hue-rotate(0deg);
+  }
+  50% { 
+    filter: hue-rotate(10deg);
+  }
+}
+
+/* ============================================
+   首屏Hero区域
+   ============================================ */
+
+.layout--home {
+  position: relative;
+  min-height: 100vh;
+  
+  /* 添加第一个文章前的Hero内容 */
+  &::before {
+    content: 'Stonespace\A Your Code Journey Awaits';
+    white-space: pre;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: transparent;
+    background: linear-gradient(135deg, $primary-color 0%, $secondary-color 50%, $accent-color 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -2px;
+    animation: fadeInDown 1s ease-out;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ============================================
+   导航栏样式
+   ============================================ */
+
+.header {
+  background: rgba(15, 23, 42, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2) !important;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(15, 23, 42, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+  }
+}
+
+.header__brand a {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.navigation__item {
+  position: relative;
+  
+  a {
+    color: $text-secondary;
+    transition: color 0.3s ease;
+    position: relative;
+    
+    /* 下划线动画 */
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, $primary-color, $secondary-color);
+      transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+  }
+  
+  &:hover a {
+    color: $text-primary;
+    
+    &::after { 
+      width: 100%;
+    }
+  }
+  
+  &--active a {
+    color: $primary-color;
+    font-weight: 600;
+    
+    &::after {
+      width: 100%;
+      background: $primary-color;
+    }
+  }
+}
+
+/* ============================================
+   文章列表 - 卡片网格
+   ============================================ */
+
+.article-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 120px;  /* Hero区域的间距 */
+  padding: 40px 20px;
+}
+
+.item {
+  position: relative;
+  background: $card-bg;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  
+  /* 炫彩边框 */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.1), 
+      transparent);
+    transition: left 0.5s ease;
+    z-index: 0;
+  }
+  
+  &:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 
+      0 20px 60px rgba(99, 102, 241, 0.3),
+      0 0 40px rgba(236, 72, 153, 0.2);
+    border-color: rgba(99, 102, 241, 0.3);
+    
+    &::before {
+      left: 100%;
+    }
+  }
+  
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.item__header {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 12px 0;
+  
+  background: linear-gradient(135deg, 
+    $text-primary 0%, 
+    $secondary-color 50%, 
+    $primary-color 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: text-shadow 0.3s ease;
+    
+    &:hover {
+      text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    }
+  }
+}
+
+.item__content {
+  flex: 1;
+}
+
+.item__description {
+  color: $text-secondary;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 16px 0;
+  
+  /* 文字渐显 */
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  
+  .item:hover & {
+    opacity: 1;
+  }
+  
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 600;
+    
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $secondary-color;
+    }
+  }
+}
+
+/* 阅读时间标签 */
+.article-meta {
+  font-size: 0.85rem;
+  color: $accent-color;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   隐藏广告相关元素
+   ============================================ */
+
+.sharing,
+.comments,
+.pageview,
+.analytics,
+.article-footer .tags,
+.ads,
+.advertisement {
+  display: none !important;
+}
+
+/* ============================================
+   分页器样式
+   ============================================ */
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 60px 0;
+  
+  .item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: $text-secondary;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: $primary-color;
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    }
+    
+    &--active {
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      color: white;
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    }
+  }
+}
+
+/* ============================================
+   页脚样式
+   ============================================ */
+
+.footer {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+  color: $text-secondary;
+  padding: 40px 20px;
+  text-align: center;
+  
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ============================================
+   响应式设计
+   ============================================ */
+
+@media (max-width: 768px) {
+  .layout--home::before {
+    font-size: 2.5rem;
+  }
+  
+  .article-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 80px;
+  }
+  
+  .navigation {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout--home::before {
+    font-size: 1.8rem;
+  }
+  
+  .item {
+    padding: 16px;
+  }
+  
+  .item__header {
+    font-size: 1.1rem;
+  }
+}
+
+/* ============================================
+   滚动动画
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 应用到卡片 */
+.item {
+  animation: fadeInUp 0.6s ease-out backwards;
+  
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.08}s;
+    }
+  }
+}
