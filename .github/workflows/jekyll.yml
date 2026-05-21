@@ -1,4 +1,4 @@
-name: 🚀 Jekyll Build and Deploy
+name: Jekyll Build and Deploy
 
 on:
   push:
@@ -14,22 +14,21 @@ jobs:
         ruby-version: ['3.1']
 
     steps:
-    - name: 📥 Checkout code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
-    - name: 💎 Set up Ruby
+    - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
 
-    - name: 🏗️ Build Jekyll site
+    - name: Build Jekyll site
       run: |
         bundle exec jekyll build --verbose
       env:
         JEKYLL_ENV: production
 
-    - name: ✨ Test site structure
+    - name: Test site structure
       run: |
         test -d _site
         test -f _site/index.html
@@ -39,6 +38,9 @@ jobs:
     needs: build-and-test
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     
     permissions:
       contents: read
@@ -46,24 +48,27 @@ jobs:
       id-token: write
 
     steps:
-    - name: 📥 Checkout code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
-    - name: 💎 Set up Ruby
+    - name: Fix git dubious ownership
+      run: git config --global --add safe.directory /github/workspace
+
+    - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.1'
         bundler-cache: true
 
-    - name: 🏗️ Build Jekyll site
+    - name: Build Jekyll site
       run: bundle exec jekyll build
       env:
         JEKYLL_ENV: production
 
-    - name: 📦 Upload artifact to GitHub Pages
-      uses: actions/upload-pages-artifact@v3
+    - name: Deploy to GitHub Pages
+      uses: actions/upload-pages-artifact@v2
       with:
         path: ./_site
 
-    - name: 🚀 Deploy to GitHub Pages
-      uses: actions/deploy-pages@v4
+    - name: Deploy artifact to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
