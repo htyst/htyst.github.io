@@ -445,7 +445,7 @@ Jekyll检测 (Front Matter解析)
         ↓
 递归引入组件 (_includes/)
         ↓
-处理Liquid模板 ({% for %}, {{ variable }})
+处理Liquid模板语法
         ↓
 编译SCSS→CSS (_sass/)
         ↓
@@ -473,7 +473,7 @@ Jekyll检测 (Front Matter解析)
 1. 访问 /2025/03/01/start.html
 2. 使用 article.html 布局
 3. 渲染 article-header.html (标题、元信息)
-4. 渲染 {{ content }} (文章markdown)
+4. 渲染 content 文章markdown
 5. 启用增强: mathjax/mermaid/chart (根据前置数据)
 6. 渲染 sharing.html (分享按钮)
 7. 渲染 article-footer.html (标签、作者)
