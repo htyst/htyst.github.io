@@ -1,4 +1,4 @@
-name: Jekyll Build and Deploy
+name: 🚀 Jekyll Build and Deploy
 
 on:
   push:
@@ -14,21 +14,22 @@ jobs:
         ruby-version: ['3.1']
 
     steps:
-    - uses: actions/checkout@v3
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
 
-    - name: Set up Ruby
+    - name: 💎 Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
 
-    - name: Build Jekyll site
+    - name: 🏗️ Build Jekyll site
       run: |
         bundle exec jekyll build --verbose
       env:
         JEKYLL_ENV: production
 
-    - name: Test site structure
+    - name: ✨ Test site structure
       run: |
         test -d _site
         test -f _site/index.html
@@ -37,7 +38,7 @@ jobs:
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     
     permissions:
       contents: read
@@ -45,23 +46,24 @@ jobs:
       id-token: write
 
     steps:
-    - uses: actions/checkout@v3
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
 
-    - name: Set up Ruby
+    - name: 💎 Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.1'
         bundler-cache: true
 
-    - name: Build Jekyll site
+    - name: 🏗️ Build Jekyll site
       run: bundle exec jekyll build
       env:
         JEKYLL_ENV: production
 
-    - name: Deploy to GitHub Pages
-      uses: actions/upload-pages-artifact@v2
+    - name: 📦 Upload artifact to GitHub Pages
+      uses: actions/upload-pages-artifact@v3
       with:
         path: ./_site
 
-    - name: Deploy artifact to GitHub Pages
-      uses: actions/deploy-pages@v2
+    - name: 🚀 Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4
