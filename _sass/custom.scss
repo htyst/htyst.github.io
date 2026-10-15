@@ -1,7 +1,7 @@
-/* Calm reading styles for article and archive pages. */
-body { background: #faf9f6; }
-a { color: #a54d33; }
-.header { background: #faf9f6; border-bottom: 1px solid #dfe3df; }
+/* Dusk reading surfaces for article and archive pages. */
+body { background: #16212e; color: #edf1f5; }
+a { color: #f3b18f; }
+.header { background: rgba(22,33,46,.92); border-bottom: 1px solid rgba(218,230,244,.16); backdrop-filter: blur(18px); }
 .article__content { line-height: 1.9; }
 .article__content h2 { margin-top: 2em; }
 .article__content img { border-radius: 8px; }
