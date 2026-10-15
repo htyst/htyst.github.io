@@ -1,4 +1,7 @@
-/* start custom scss snippet */
-@import "theme-cyberpunk";
-
-/* end custom scss snippet */
+/* Calm reading styles for article and archive pages. */
+body { background: #faf9f6; }
+a { color: #a54d33; }
+.header { background: #faf9f6; border-bottom: 1px solid #dfe3df; }
+.article__content { line-height: 1.9; }
+.article__content h2 { margin-top: 2em; }
+.article__content img { border-radius: 8px; }
