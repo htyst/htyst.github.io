@@ -23,13 +23,41 @@ header{background:rgba(22,33,46,.75);backdrop-filter:blur(18px);-webkit-backdrop
 .sun{background:#ffdbad;box-shadow:0 0 70px rgba(255,195,144,.5)}.hill{background:#2b4d60}.hill.back{background:#567885}.skip{background:#24384b;color:#fff}
 @supports not (backdrop-filter:blur(1px)){.card{background:#233140}.quote{background:#263443}}
 
+
+/* Ember dusk: painterly warmth on charcoal glass. */
+:root{--paper:#191a20;--ink:#f2eee9;--muted:#bcb4b3;--line:rgba(224,201,191,.15);--orange:#e5a18c;--blue:rgba(172,98,88,.09)}
+body{background:radial-gradient(ellipse at 83% 6%,rgba(138,61,58,.24),transparent 46%),radial-gradient(ellipse at 6% 55%,rgba(100,72,82,.12),transparent 45%),linear-gradient(145deg,#23222b,#17191f 62%,#221d24)}
+header{background:rgba(25,25,31,.79);border-bottom-color:rgba(235,181,155,.13)}
+.brand{font-weight:500;letter-spacing:-.8px}.brand span{color:#df9985}
+.hero{gap:56px}h1{font-weight:500;letter-spacing:-1.5px}h1 span{color:#e4a08a}
+.eyebrow{color:#d9a391;font-size:10px;letter-spacing:2.6px}
+.intro{line-height:2}.button{background:linear-gradient(125deg,#bd6d5d,#d18c73);color:#fff9f3;border:1px solid rgba(255,219,192,.22);box-shadow:0 8px 28px rgba(121,48,45,.2)}
+.button:hover{background:#dd9b7f;color:#211a1a}
+.landscape{height:410px;border-radius:115px 115px 14px 14px;background:#28242d;border:1px solid rgba(236,180,151,.23);box-shadow:0 30px 70px rgba(0,0,0,.3),0 0 80px rgba(156,67,54,.09)}
+.landscape .sun,.landscape .hill{display:none}
+.landscape:after{inset:0;background:linear-gradient(180deg,rgba(20,17,24,.04),transparent 55%,rgba(20,17,24,.26));pointer-events:none}
+.hero-art{display:block;width:100%;height:100%;object-fit:cover;object-position:45% center}
+.caption{font-size:9px;letter-spacing:1.8px;color:#b6a5a4;margin-top:18px}
+.cards{gap:22px}.card{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(183,134,123,.085),rgba(255,255,255,.025));border-color:rgba(225,188,169,.14);border-radius:12px;padding:29px;box-shadow:inset 0 1px 0 rgba(255,222,206,.04),0 12px 36px rgba(0,0,0,.1)}
+.card:before{content:"";position:absolute;width:70px;height:2px;top:0;left:28px;background:linear-gradient(90deg,#b76f5e,transparent)}
+.card:hover{background:linear-gradient(135deg,rgba(183,113,97,.13),rgba(255,255,255,.04));border-color:rgba(212,145,123,.42)}
+.number{font-size:24px;color:#d8a087}h3{letter-spacing:.5px}.tag{color:#c8b0a7;font-size:9px;letter-spacing:1.5px}
+.strip{border-color:rgba(225,188,169,.15)}.strip b{color:#d4a28b}
+.note{padding:26px 0}.note:hover{background:linear-gradient(90deg,rgba(169,83,71,.08),transparent)}
+.note strong{font-weight:450}.note time{color:#bd9f95}
+.quote{background:linear-gradient(115deg,rgba(154,80,72,.14),rgba(176,127,111,.04));border-color:rgba(220,167,139,.19);border-left:2px solid #bb7a61}
+.quote blockquote{font-family:Georgia,"Songti SC","Noto Serif CJK SC",serif;font-size:25px;letter-spacing:2px;color:#e7c3ac}.quote-mark{color:#b57d68}
+footer{border-color:rgba(225,188,169,.13)}
+@media(max-width:760px){.hero{gap:32px}.landscape{height:330px;border-radius:90px 90px 12px 12px}.caption{font-size:8px;letter-spacing:1px}.quote blockquote{font-size:21px}.card{padding:26px}}
+@supports not (backdrop-filter:blur(1px)){.card{background:#29232a}.quote{background:#2b2228}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">跳转到正文</a>
 <header><nav class="wrap" aria-label="主导航"><a class="brand" href="{{ '/' | relative_url }}">Stone<span>space.</span></a><div class="navlinks"><a href="#explore">探索方向</a><a href="#notes">学习笔记</a><a href="{{ '/about.html' | relative_url }}">关于我</a><a href="https://github.com/htyst">GitHub ↗</a></div></nav></header>
 <main id="main" class="wrap">
-<section class="hero"><div><div class="eyebrow">A personal space for curiosity</div><h1>你好，我是侯廷一。<span>Keep exploring.</span></h1><p class="intro">在数学、代码与日落之间，记录学习的轨迹。<br>把抽象的想法慢慢想清楚，把好奇变成具体的尝试。</p><a class="button" href="#notes">阅读学习笔记 <span aria-hidden="true">↗</span></a><a class="sub-link" href="{{ '/about.html' | relative_url }}">认识我 →</a></div><div><div class="landscape" role="img" aria-label="暖橙色落日与蓝灰色山峦的抽象风景"><div class="sun"></div><div class="hill back"></div><div class="hill"></div></div><div class="caption"><span>BETWEEN IDEAS & HORIZONS</span><span>日落之后，仍有新知</span></div></div></section>
+<section class="hero"><div><div class="eyebrow">A personal space for curiosity</div><h1>你好，我是侯廷一。<span>Keep exploring.</span></h1><p class="intro">在数学、代码与日落之间，记录学习的轨迹。<br>把抽象的想法慢慢想清楚，把好奇变成具体的尝试。</p><a class="button" href="#notes">阅读学习笔记 <span aria-hidden="true">↗</span></a><a class="sub-link" href="{{ '/about.html' | relative_url }}">认识我 →</a></div><div><div class="landscape"><img class="hero-art" src="{{ '/assets/images/ember-coast-v1.webp' | relative_url }}" alt="深靛色海岸上，暖红晚霞与落日的金色倒影" width="1536" height="1024" fetchpriority="high" decoding="async"></div><div class="caption"><span>BETWEEN IDEAS & HORIZONS</span><span>日落之后，仍有新知</span></div></div></section>
 <div class="strip"><span><b>01</b> 数学与思考</span><span><b>02</b> 代码与实践</span><span><b>03</b> 记录与表达</span><span>保持好奇，持续生长 ↗</span></div>
 <section id="explore" class="section"><div class="section-head"><div><div class="eyebrow">Fields of curiosity</div><h2>从好奇开始探索</h2></div><span class="small-link">学习 · 实践 · 积累</span></div><div class="cards"><article class="card"><span class="number">01 /</span><h3>数学与课程</h3><p>梳理概念之间的联系，留下推导、证明与理解的过程，让知识逐渐形成自己的结构。</p><span class="tag">MATHEMATICS & LEARNING</span></article><article class="card"><span class="number">02 /</span><h3>代码与项目</h3><p>从一个想法到一次实现，记录编程实践中的方法、问题与每一次小小的突破。</p><a class="tag" href="https://github.com/htyst?tab=repositories">EXPLORE ON GITHUB ↗</a></article><article class="card"><span class="number">03 /</span><h3>文字与日常</h3><p>为生活保留一点留白。收藏值得停下来的瞬间，也记录成长途中尚未成形的想法。</p><span class="tag">NOTES & REFLECTIONS</span></article></div></section>
 <section id="notes" class="section"><div class="section-head"><div><div class="eyebrow">The learning journal</div><h2>最近的学习笔记</h2></div><a class="small-link" href="{{ '/archive.html' | relative_url }}">全部归档 ↗</a></div><div class="notes">{% for post in site.posts limit: 5 %}<a class="note" href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time><div><strong>{{ post.title | escape }}</strong><small>学习记录 · 阅读全文</small></div><span aria-hidden="true">↗</span></a>{% else %}<p>新的学习记录正在路上。</p>{% endfor %}</div></section>

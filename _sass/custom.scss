@@ -1,7 +1,8 @@
-/* Dusk reading surfaces for article and archive pages. */
-body { background: #16212e; color: #edf1f5; }
-a { color: #f3b18f; }
-.header { background: rgba(22,33,46,.92); border-bottom: 1px solid rgba(218,230,244,.16); backdrop-filter: blur(18px); }
+/* Warm charcoal reading surfaces. */
+body { background: #191a20; color: #f2eee9; }
+a { color: #e5a18c; }
+.header { background: rgba(25,26,32,.93); border-bottom: 1px solid rgba(224,201,191,.15); backdrop-filter: blur(18px); }
 .article__content { line-height: 1.9; }
 .article__content h2 { margin-top: 2em; }
 .article__content img { border-radius: 8px; }
+.article__content blockquote { border-left-color: #bb7a61; color: #d7b9a6; }
