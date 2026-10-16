@@ -117,6 +117,20 @@ body.motion-paused .silk,body.motion-paused .ambient-dust i{animation-play-state
 @media(max-width:760px){.wrap{width:calc(100% - 40px)}nav{min-height:80px}.brand{font-size:24px}.navlinks{gap:16px}.hero{grid-template-columns:1fr;min-height:0;padding:56px 0;gap:42px}h1{font-size:clamp(42px,8.8vw,64px);letter-spacing:-1.8px}h1 span{font-size:34px}.intro{font-size:16px;margin:27px 0}.landscape{aspect-ratio:1.18;border-radius:85px 85px 12px 12px}.caption{letter-spacing:1px}.ambient-ribbons{width:160%;margin-left:-30%;opacity:.65}.ambient-dust i:nth-child(n+17){display:none}}
 @media(prefers-reduced-motion:reduce){.silk,.ambient-dust i{animation:none;will-change:auto}.ambient-dust i{opacity:.2}}
 
+
+/* Restore the compact layout; retain the reference's champagne lettering. */
+.wrap{width:min(1120px,calc(100% - 48px))}
+nav{min-height:88px}.brand{font-size:23px}.navlinks{gap:28px}
+.hero{grid-template-columns:1.15fr 1fr;gap:56px;min-height:0;padding:82px 0 76px}
+h1{font-family:"Bodoni MT","Didot","Baskerville","Times New Roman",serif;font-size:clamp(42px,4.7vw,60px);font-weight:600;line-height:1.13;letter-spacing:-1.8px;margin:22px 0;color:#edc4ad;-webkit-text-stroke:.3px rgba(255,224,201,.65);text-shadow:0 1px 0 rgba(112,70,59,.8),0 0 20px rgba(226,150,126,.08)}
+h1 span{font-family:"Bodoni MT","Didot","Baskerville","Times New Roman",serif;font-size:clamp(30px,3.25vw,42px);font-weight:600;font-style:italic;line-height:1.25;letter-spacing:-1.2px;margin-top:12px;color:#edbda3;-webkit-text-stroke:.15px rgba(255,216,191,.45)}
+.intro{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;max-width:450px;font-size:16px;line-height:2;margin:24px 0 30px}
+.button{padding:12px 22px}.landscape{height:410px;aspect-ratio:auto;border-radius:115px 115px 14px 14px}
+.caption{font-size:9px;letter-spacing:1.8px;margin-top:18px}
+@media(min-width:1600px){.wrap{width:1120px}.hero{gap:56px}h1{font-size:60px}.landscape{height:410px;aspect-ratio:auto}}
+@media(max-width:1000px) and (min-width:761px){.wrap{width:calc(100% - 48px)}.hero{gap:36px}h1{font-size:46px;letter-spacing:-1.6px}.intro{font-size:15px}.landscape{height:380px;border-radius:95px 95px 14px 14px}}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}nav{min-height:76px}.brand{font-size:23px}.navlinks{gap:18px}.hero{grid-template-columns:1fr;gap:32px;padding:45px 0;min-height:0}h1{font-size:clamp(39px,8.7vw,54px);letter-spacing:-1.3px}h1 span{font-size:34px;margin-top:10px}.intro{font-size:16px;margin:24px 0 30px}.landscape{height:330px;aspect-ratio:auto;border-radius:90px 90px 12px 12px}.caption{font-size:8px;letter-spacing:1px}}
+
 </style>
 </head>
 <body>
