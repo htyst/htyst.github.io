@@ -60,10 +60,15 @@ body{position:relative;isolation:isolate;background-color:#0d0f19;background-ima
 .reference-atmosphere svg{display:block;width:100%;height:100%;min-height:650px}
 header{background:rgba(17,17,27,.8)}
 @media(max-width:760px){.reference-atmosphere svg{width:150%;margin-left:-25%}}
+
+/* More vivid indigo, violet and rose, with layout unchanged. */
+body{background-color:#0b1023;background-image:radial-gradient(ellipse at 83% 24%,rgba(130,49,91,.7),transparent 43%),radial-gradient(ellipse at 48% 70%,rgba(74,51,104,.62),transparent 52%),radial-gradient(ellipse at 8% 80%,rgba(35,57,112,.48),transparent 45%),linear-gradient(140deg,#0b1023 10%,#1c2344 67%,#1b152e)}
+.reference-atmosphere svg{filter:saturate(1.22)}
+header{background:rgba(12,15,30,.82)}
 </style>
 </head>
 <body>
-<div class="reference-atmosphere" aria-hidden="true"><svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="rose-silk"><stop stop-color="#532f3d" stop-opacity="0"/><stop offset=".5" stop-color="#532f3d" stop-opacity=".65"/><stop offset=".82" stop-color="#8b4765"/><stop offset="1" stop-color="#8b4765" stop-opacity=".45"/></linearGradient><linearGradient id="indigo-silk"><stop stop-color="#354064" stop-opacity=".65"/><stop offset=".55" stop-color="#262b48" stop-opacity=".6"/><stop offset="1" stop-color="#151829" stop-opacity="0"/></linearGradient><filter id="soft-silk" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="24"/></filter></defs><g fill="none" filter="url(#soft-silk)"><path d="M 700 310 C 730 680 1110 1090 1700 480" stroke="url(#rose-silk)" stroke-width="84"/><path d="M -160 710 C 240 680 420 1010 1080 1090" stroke="url(#indigo-silk)" stroke-width="78"/><path d="M 350 430 C 480 710 800 880 1120 900" stroke="url(#indigo-silk)" stroke-width="30" opacity=".65"/></g></svg></div>
+<div class="reference-atmosphere" aria-hidden="true"><svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="rose-silk"><stop stop-color="#953c67" stop-opacity="0"/><stop offset=".5" stop-color="#953c67" stop-opacity=".65"/><stop offset=".82" stop-color="#e66b98"/><stop offset="1" stop-color="#e66b98" stop-opacity=".45"/></linearGradient><linearGradient id="indigo-silk"><stop stop-color="#4b62b6" stop-opacity=".65"/><stop offset=".55" stop-color="#414789" stop-opacity=".6"/><stop offset="1" stop-color="#151829" stop-opacity="0"/></linearGradient><filter id="soft-silk" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="24"/></filter></defs><g fill="none" filter="url(#soft-silk)"><path d="M 700 310 C 730 680 1110 1090 1700 480" stroke="url(#rose-silk)" stroke-width="84"/><path d="M -160 710 C 240 680 420 1010 1080 1090" stroke="url(#indigo-silk)" stroke-width="78"/><path d="M 350 430 C 480 710 800 880 1120 900" stroke="url(#indigo-silk)" stroke-width="30" opacity=".65"/></g></svg></div>
 <a class="skip" href="#main">跳转到正文</a>
 <header><nav class="wrap" aria-label="主导航"><a class="brand" href="{{ '/' | relative_url }}">Stone<span>space.</span></a><div class="navlinks"><a href="#explore">探索方向</a><a href="#notes">学习笔记</a><a href="{{ '/about.html' | relative_url }}">关于我</a><a href="https://github.com/htyst">GitHub ↗</a></div></nav></header>
 <main id="main" class="wrap">
