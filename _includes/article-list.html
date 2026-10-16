@@ -141,4 +141,13 @@
     {%- endif -%}
   {%- endfor -%}
 
+  {%- comment -%}
+    group_by='year' 时，循环内每跨一年会输出 <section>…<ul>，并在下一年开始前闭合，
+    但最后一组（最早年份）从未闭合，生成残缺 HTML（靠浏览器自动纠错才勉强显示）。
+    在此补上最后一组的闭合标签；列表为空时不输出，避免多余的闭合标签。
+  {%- endcomment -%}
+  {%- if include.type == 'brief' and include.group_by == 'year' and _sorted_list.size > 0 -%}
+    </ul></section>
+  {%- endif -%}
+
 </div>

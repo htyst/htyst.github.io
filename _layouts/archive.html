@@ -28,7 +28,10 @@ titles:
 
 <div class="layout--archive js-all">
   {%- include tags.html -%}
-  <div class="js-result layout--archive__result d-none">
+  <!-- 文章列表默认可见：仅靠 JS（从 CDN 加载 jQuery 成功后）才移除 d-none，
+       一旦 CDN 失败归档就会整页空白。改为渐进增强——无 JS 时直接展示全部文章，
+       JS 加载成功后再按标签筛选/隐藏。 -->
+  <div class="js-result layout--archive__result">
     {%- include article-list.html articles=site.posts type='brief' show_info=true reverse=true group_by='year' -%}
   </div>
 </div>
