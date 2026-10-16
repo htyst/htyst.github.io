@@ -153,6 +153,27 @@ h3{margin:18px 0 10px}.tag{margin-top:18px}
 @media(min-width:1600px){.wrap{width:1060px}.hero{gap:34px}h1{font-size:56px}.landscape{height:360px}}
 @media(max-width:1000px) and (min-width:761px){.hero{gap:28px}h1{font-size:44px}.landscape{height:340px}}
 @media(max-width:760px){.wrap{width:calc(100% - 36px)}nav{min-height:70px}.hero{grid-template-columns:1fr;padding:30px 0;gap:24px}h1{font-size:clamp(39px,8.7vw,52px)}h1 span{font-size:31px}.intro{margin:18px 0 22px}.landscape{height:300px;border-radius:80px 80px 12px 12px}.section{padding-top:32px}.card{min-height:0;padding:22px}.quote{margin:32px 0;padding:24px}.ambient-ribbons{opacity:.5}}
+
+/* Balanced spacing and a completely still coastal image. */
+.wrap{width:min(1120px,calc(100% - 48px))}
+nav{min-height:82px}
+.hero{grid-template-columns:1.15fr 1fr;gap:46px;padding:64px 0 58px;min-height:0}
+h1{font-size:clamp(42px,4.7vw,60px);line-height:1.12;margin:22px 0}
+h1 span{font-size:40px;line-height:1.25;margin-top:12px}
+.intro{margin:24px 0 28px;line-height:1.95}
+.landscape{height:390px;border-radius:105px 105px 14px 14px}
+.hero-art{animation:none;transform:none;will-change:auto}
+.landscape:before{display:none;animation:none}
+.landscape:after{animation:none;background:linear-gradient(180deg,rgba(20,17,24,.02),transparent 55%,rgba(20,17,24,.16));background-size:100% 100%;background-position:0 0}
+.caption{margin-top:16px}
+.strip{padding:20px 0}
+.section{padding-top:54px}.section-head{margin-bottom:24px}
+.cards{gap:20px}.card{padding:28px;min-height:230px}
+h3{margin:22px 0 12px}.tag{margin-top:22px}
+.quote{margin:54px 0;padding:36px}
+@media(min-width:1600px){.wrap{width:1120px}.hero{gap:46px}h1{font-size:60px}.landscape{height:390px}}
+@media(max-width:1000px) and (min-width:761px){.hero{gap:32px}h1{font-size:46px}.landscape{height:360px}}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}nav{min-height:76px}.hero{grid-template-columns:1fr;padding:40px 0;gap:30px}h1{font-size:clamp(39px,8.7vw,54px)}h1 span{font-size:34px}.intro{margin:22px 0 26px}.landscape{height:320px;border-radius:85px 85px 12px 12px}.section{padding-top:40px}.card{min-height:0;padding:25px}.quote{margin:40px 0;padding:28px}}
 </style>
 </head>
 <body>
@@ -160,19 +181,11 @@ h3{margin:18px 0 10px}.tag{margin-top:18px}
 <a class="skip" href="#main">跳转到正文</a>
 <header><nav class="wrap" aria-label="主导航"><a class="brand" href="{{ '/' | relative_url }}">Stone<span>space.</span></a><div class="navlinks"><a href="#explore">探索方向</a><a href="#notes">学习笔记</a><a href="{{ '/about.html' | relative_url }}">关于我</a><a href="https://github.com/htyst">GitHub ↗</a></div></nav></header>
 <main id="main" class="wrap">
-<section class="hero"><div><div class="eyebrow">A personal space for curiosity</div><h1>Welcome to stone<br>space<span>Keep exploring.</span></h1><p class="intro">在数学、代码与日落之间，记录学习的轨迹。<br>把抽象的想法慢慢想清楚，把好奇变成具体的尝试。</p><a class="button" href="#notes">阅读学习笔记 <span aria-hidden="true">↗</span></a><a class="sub-link" href="{{ '/about.html' | relative_url }}">认识我 →</a></div><div><div class="landscape"><img class="hero-art" src="{{ '/assets/images/ember-coast-v1.webp' | relative_url }}" alt="深靛色海岸上，暖红晚霞与落日的金色倒影" width="1536" height="1024" fetchpriority="high" decoding="async"><button class="art-control" type="button" aria-label="暂停落日动画" aria-pressed="false">暂停光影 Ⅱ</button></div><div class="caption"><span>BETWEEN IDEAS & HORIZONS</span><span>日落之后，仍有新知</span></div></div></section>
+<section class="hero"><div><div class="eyebrow">A personal space for curiosity</div><h1>Welcome to stone<br>space<span>Keep exploring.</span></h1><p class="intro">在数学、代码与日落之间，记录学习的轨迹。<br>把抽象的想法慢慢想清楚，把好奇变成具体的尝试。</p><a class="button" href="#notes">阅读学习笔记 <span aria-hidden="true">↗</span></a><a class="sub-link" href="{{ '/about.html' | relative_url }}">认识我 →</a></div><div><div class="landscape"><img class="hero-art" src="{{ '/assets/images/ember-coast-v1.webp' | relative_url }}" alt="深靛色海岸上，暖红晚霞与落日的金色倒影" width="1536" height="1024" fetchpriority="high" decoding="async"></div><div class="caption"><span>BETWEEN IDEAS & HORIZONS</span><span>日落之后，仍有新知</span></div></div></section>
 <div class="strip"><span><b>01</b> 数学与思考</span><span><b>02</b> 代码与实践</span><span><b>03</b> 记录与表达</span><span>保持好奇，持续生长 ↗</span></div>
 <section id="explore" class="section"><div class="section-head"><div><div class="eyebrow">Fields of curiosity</div><h2>从好奇开始探索</h2></div><span class="small-link">学习 · 实践 · 积累</span></div><div class="cards"><article class="card"><span class="number">01 /</span><h3>课程总结</h3><p>梳理概念之间的联系，留下推导、证明与理解的过程，让知识逐渐形成自己的结构。</p><span class="tag">MATHEMATICS & LEARNING</span></article><article class="card"><span class="number">02 /</span><h3>实践项目</h3><p>从一个想法到一次实现，记录编程实践中的方法、问题与每一次小小的突破。</p><a class="tag" href="https://github.com/htyst?tab=repositories">EXPLORE ON GITHUB ↗</a></article><a class="card journal-entry" href="{{ '/stone-words/' | relative_url }}"><span class="number">03 /</span><h3>石头的话</h3><p>为生活保留一点留白。收藏值得停下来的瞬间，也记录成长途中尚未成形的想法。</p><span class="tag">OPEN MY JOURNAL ↗</span></a></div></section>
 <section id="notes" class="section"><div class="section-head"><div><div class="eyebrow">The learning journal</div><h2>最近的学习笔记</h2></div><a class="small-link" href="{{ '/archive.html' | relative_url }}">全部归档 ↗</a></div><div class="notes">{% for post in site.posts limit: 5 %}<a class="note" href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time><div><strong>{{ post.title | escape }}</strong><small>学习记录 · 阅读全文</small></div><span aria-hidden="true">↗</span></a>{% else %}<p>新的学习记录正在路上。</p>{% endfor %}</div></section>
 <aside class="quote"><div><div class="eyebrow">A thought to keep</div><blockquote>温柔而坚定，清醒且好奇。</blockquote><p>给思考一点时间，也给生活一点光。</p></div><span class="quote-mark" aria-hidden="true">”</span></aside>
 </main><footer><div class="wrap footer-row"><span>© {{ 'now' | date: '%Y' }} 侯廷一 · Stonespace</span><span>用文字记录，用代码创造。 <a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a></span></div></footer>
-<script>
-document.querySelector('.art-control').addEventListener('click',function(){
-var paused=this.closest('.landscape').classList.toggle('is-paused');
-document.body.classList.toggle('motion-paused',paused);
-this.setAttribute('aria-pressed',String(paused));
-this.setAttribute('aria-label',paused?'播放落日动画':'暂停落日动画');
-this.textContent=paused?'播放光影 ▷':'暂停光影 Ⅱ';
-});
-</script>
+
 </body></html>
