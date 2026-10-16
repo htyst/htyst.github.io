@@ -31,3 +31,9 @@ jobs:
           test -s _site/about.html
           test -s _site/archive.html
           test -s _site/assets/css/main.css
+          # 归档页回归检查：不能只测文件非空，还要测文章真的渲染进归档、
+          # 且按年份分组的 <section> 已闭合（曾出现列表残缺/整页空白却仍通过检查）。
+          grep -q "Start" _site/archive.html
+          grep -q "Blush pink Heartbeat" _site/archive.html
+          grep -q "</section>" _site/archive.html
+          grep -q "js-tags" _site/archive.html

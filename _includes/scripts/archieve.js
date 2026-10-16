@@ -86,7 +86,8 @@
             result[i] || (result[i] = {});
             result[i][j] = true;
           } else {
-            var tags = $articles.eq(j).data('tags').split(',');
+            // 用 attr() 而非 data()：data() 会把 "2025" 这类纯数字标签转换成 number，随后 .split() 抛错、筛选中断
+            var tags = ($articles.eq(j).attr('data-tags') || '').split(',');
             for (k = 0; k < tags.length; k++) {
               if (tags[k] === tag) {
                 result[i] || (result[i] = {});
@@ -128,7 +129,9 @@
     var query = queryString(), _tag = query.tag;
     init(); tagSelect(_tag);
     $tags.on('click', 'button', function() {
-      tagSelect($(this).data('encode'), $(this));
+      // 同上：用 attr() 取原始 url_encode 字符串，避免 data() 的类型转换
+      // 使其与 data-tags / URL 里的 ?tag= 值（始终是字符串）严格比较失败。
+      tagSelect($(this).attr('data-encode'), $(this));
     });
 
   });
