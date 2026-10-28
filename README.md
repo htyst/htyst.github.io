@@ -2,29 +2,34 @@
 
 数学、代码与日落之间，记录学习与成长。
 
-**[访问网站 →](https://htyst.github.io/)** · [学习笔记](https://htyst.github.io/#notes) · [文章归档](https://htyst.github.io/archive.html)
+**[访问网站 →](https://htyst.github.io/)** · [个人博客](https://htyst.github.io/#notes) · [文章归档](https://htyst.github.io/archive.html)
 
 ## 关于这个空间
 
-这里收集我的课程学习、编程实践与日常思考。主页采用深蓝灰配色、日落风景与半透明玻璃卡片，兼顾桌面和手机阅读。
+这里收集我的课程学习、编程实践与日常思考。主页以深色背景、日落风景与半透明卡片呈现，兼顾桌面和手机阅读。
 
-- **数学与课程**：概念、推导与理解的过程。
-- **代码与项目**：编程尝试、实现方法与问题记录。
-- **文字与日常**：值得留下的片段与想法。
+- **[课程总结](https://stone-course-notes.adored-wood-6333.chatgpt.site)**：梳理概念之间的联系，记录推导、证明与理解的过程。
+- **[实践项目](https://github.com/htyst?tab=repositories)**：从想法到实现，记录编程实践中的方法与问题。
+- **[石头的话](https://htyst.github.io/stone-words/)**：收藏生活中的片段，记录成长途中的想法。
+- **[个人博客](https://htyst.github.io/#notes)**：首页展示最新的文章，更多内容可在[文章归档](https://htyst.github.io/archive.html)查看。
 
 ## 内容维护
 
 | 内容 | 位置 |
 | --- | --- |
-| 首页内容与视觉样式 | `index.html` |
+| 首页内容、导航、卡片链接与视觉样式 | `index.html` |
 | 个人介绍 | `about.md` |
-| 学习笔记与文章 | `_posts/` |
+| 个人博客文章 | `_posts/` |
+| 文章归档页 | `archive.html` |
+| 石头的话入口页及栏目数据 | `stone-words/index.html`、`_data/stone_words.json` |
 | 网站名称、作者及插件设置 | `_config.yml` |
 | 文章与归档页的补充样式 | `_sass/custom.scss` |
-| 导航菜单 | `_data/navigation.yml` |
+| 主题页面导航菜单 | `_data/navigation.yml` |
 | 构建检查 | `.github/workflows/jekyll.yml` |
 
-新增文章时，在 `_posts/` 中创建 `YYYY-MM-DD-title.md`，例如：
+首页导航直接写在 `index.html` 中；`_data/navigation.yml` 管理主题页面的导航。课程总结位于独立的 Stone 课程笔记站点；如需修改首页的课程总结入口链接，请编辑 `index.html`。
+
+新增博客文章时，在 `_posts/` 中创建 `YYYY-MM-DD-title.md`，例如：
 
 ```markdown
 ---
