@@ -72,6 +72,14 @@ bundle exec jekyll build --trace
 
 基于 Jekyll、GitHub Pages 与 [TeXt Theme](https://github.com/kitian616/jekyll-TeXt-theme)，首页使用独立 HTML/CSS，文章页沿用主题布局。依赖见 `Gemfile`。
 
-代码许可见 [LICENSE](LICENSE)。
+## 版权与使用限制
+
+**本项目代码仅作展示，禁止未经授权的复制和使用。**
+
+© 2026 stone. All rights reserved. 未经许可禁止转载/复制。
+
+上述限制适用于 stone 自行创作的代码、页面设计、文章、日记及其他原创内容。未经事先授权，请勿复制、转载或使用这些内容。
+
+本项目使用的第三方主题、依赖和其他第三方代码，仍遵循各自原有的许可证。本声明不变更其已有授权；TeXt Theme 的 MIT 许可证及版权声明保留于 [LICENSE](LICENSE)。
 
 > 温柔而坚定，清醒且好奇。
