@@ -1,12 +1,12 @@
 # Stonespace · 侯廷一的个人主页
 
-数学、代码与日落之间，记录学习与成长。
+喜欢在斜晖之时，静静的思考，可以是数学逻辑，可以是想法实践，可以是百态感悟，也可以是享受此刻，夕阳几何。
 
 **[访问网站 →](https://htyst.github.io/)** · [个人博客](https://htyst.github.io/#notes) · [文章归档](https://htyst.github.io/archive.html)
 
 ## 关于这个空间
 
-这里收集我的课程学习、编程实践与日常思考。主页以深色背景、日落风景与半透明卡片呈现，兼顾桌面和手机阅读。
+这里收集我的课程学习、编程实践与日常思考。
 
 - **[课程总结](https://stone-course-notes.adored-wood-6333.chatgpt.site)**：梳理概念之间的联系，记录推导、证明与理解的过程。
 - **[实践项目](https://github.com/htyst?tab=repositories)**：从想法到实现，记录编程实践中的方法与问题。
@@ -51,7 +51,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-打开终端提示的本地地址，通常为 `http://127.0.0.1:4000/`。修改 `_config.yml` 后需重新启动预览。
+打开终端提示的本地地址。修改 `_config.yml` 后需重新启动预览。
 
 提交前可运行：
 
